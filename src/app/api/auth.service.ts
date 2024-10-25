@@ -34,10 +34,14 @@ export class AuthService {
   }
 
   isLogin(): boolean {
-    return localStorage.getItem('token') ? true : false;
+    return !!localStorage.getItem('token');
   }
 
   getToken(): string | null {
     return localStorage.getItem('token') ?? null;
+  }
+
+  logout() {
+    return localStorage.removeItem('token');
   }
 }
