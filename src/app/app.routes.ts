@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
@@ -11,7 +11,7 @@ export const routes: Routes = [
         path: 'register',
         title: 'regisetr',
         loadComponent: () =>
-          import('./register/register.component').then(
+          import('./features/register/register.component').then(
             (r) => r.RegisterComponent
           ),
       },
@@ -19,7 +19,7 @@ export const routes: Routes = [
         path: 'login',
         title: 'login',
         loadComponent: () =>
-          import('./login/login.component').then((l) => l.LoginComponent),
+          import('./features/login/login.component').then((l) => l.LoginComponent),
       },
     ],
   },
