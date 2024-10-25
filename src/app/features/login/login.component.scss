@@ -1,3 +1,15 @@
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
 form {
   font-family: sans-serif;
   margin: auto;
