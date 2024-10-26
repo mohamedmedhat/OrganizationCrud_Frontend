@@ -1,1 +1,23 @@
-<p>organization-members works!</p>
+<div>Total Members: {{ totalmembers() }}</div>
+<div *ngIf="loading()">
+  <p>Loading...</p>
+</div>
+<div *ngIf="!loading()">
+  <ng-container *ngIf="members().length > 0; else noMembers">
+    <div *ngFor="let member of members()">
+      <app-card
+        [attr.key]="member.user._id"
+        [name]="member.user.name"
+        [description]="member.user.email + ' ' + member.access_level"
+      >
+      </app-card>
+    </div>
+  </ng-container>
+  <ng-template #noMembers>
+    <div class="empty-message">
+      <h2>No Members Found</h2>
+      <p>It seems there are no members available at the moment.</p>
+      <button (click)="loadAllMembers()">Refresh</button>
+    </div>
+  </ng-template>
+</div>

@@ -3,3 +3,6 @@ export interface ICreateOrganizationRequest{
     description: string;
 }
 
+export interface ISendInvitationRequest{
+    email: string;
+}

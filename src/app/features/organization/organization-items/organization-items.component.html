@@ -1,7 +1,9 @@
-<p>organization-items works!</p>
-
-<app-card
-  [name]="'ahmed'"
-  [description]="'good man'"
-  (onclick)="handleClick('26262h2j2ih')"
-></app-card>
+<div>total is: {{totalorganizations()}}</div>
+<div class="organization-items" *ngFor="let org of organizations()">
+    <app-card
+        [attr.key]="org._id"
+        [name]="org.name"
+        [description]="org.description"
+        (onclick)="handleClick(org._id)"
+    ></app-card>
+</div>

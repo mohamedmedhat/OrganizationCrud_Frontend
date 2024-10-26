@@ -32,7 +32,7 @@ export const routes: Routes = [
     children: [
       {
         path: 'list',
-        title: 'list',
+        title: 'organizationList',
         canActivate: [AuthGuard],
         loadComponent: () =>
           import(
@@ -40,13 +40,20 @@ export const routes: Routes = [
           ).then((i) => i.OrganizationItemsComponent),
       },
       {
-        path: 'members',
+        path: 'members/:organizationId',
         title: 'members',
+        canActivate: [AuthGuard],
         loadComponent: () =>
           import(
             './features/organization/organization-members/organization-members.component'
           ).then((m) => m.OrganizationMembersComponent),
       },
+      {
+        path: 'form/create',
+        title: 'organizationForm',
+        canActivate: [AuthGuard],
+        loadComponent:() => import('./features/organization/organization-form/organization.component').then(f => f.OrganizationComponent)
+      }
     ],
   },
   {

@@ -1,0 +1,30 @@
+.empty-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    border: 2px dashed #ccc; /* Dashed border */
+    border-radius: 10px; /* Rounded corners for the message box */
+    background-color: #fff; /* White background for contrast */
+    transition: box-shadow 0.3s;
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    }
+    
+    button {
+        padding: 10px 20px;
+        background-color: #28a745; /* Green background */
+        color: white;
+        border: none;
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+
+        &:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: translateY(-2px); /* Lift effect on hover */
+        }
+    }
+}

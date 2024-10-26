@@ -14,7 +14,7 @@ export const organizationProductionEnv = {
     updateUrl:(id: string) => `${baseUrl}/organization/${id}`,
     deleteUrl:(id: string) => `${baseUrl}/organization/${id}`,
     getOneUrl:(id: string) => `${baseUrl}/organization/${id}`,
-    inviteUrl:(id: string) => `${baseUrl}/organization/${id}/invite`,
+    inviteUrl:(organizationId: string) => `${baseUrl}/organization/${organizationId}/invite`,
     acceptInvitationUrl:(invitationId: string) => `${baseUrl}/organization/accept?${invitationId}`,
     cancelInvitationUrl:(invitationId: string) => `${baseUrl}/organization/cancel?${invitationId}`,
 }
