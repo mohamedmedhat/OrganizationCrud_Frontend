@@ -33,8 +33,7 @@ export class OrganizationMembersComponent implements OnInit {
     this.orgService.getOrganization(orgId).subscribe({
       next: (data: IOrganizationResponse) => {
         this.members.set(data.members);
-        const total = data.members.length;
-      this.totalmembers.set(total);
+        this.totalmembers.set(data.members.length);
       },
       error: (err) => {
         console.log(err.message);
@@ -45,4 +44,5 @@ export class OrganizationMembersComponent implements OnInit {
       },
     });
   }
+  
 }
