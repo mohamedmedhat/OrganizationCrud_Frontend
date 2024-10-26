@@ -1,0 +1,9 @@
+<div>total is: {{totalorganizations()}}</div>
+<div class="organization-items" *ngFor="let org of organizations()">
+    <app-card
+        [attr.key]="org._id"
+        [name]="org.name"
+        [description]="org.description"
+        (onclick)="handleClick(org._id)"
+    ></app-card>
+</div>

@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '../../api/auth.service';
+import { AuthService } from '../../../api/auth.service';
 import {
   FormBuilder,
   FormGroup,
@@ -8,7 +8,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ILoginResponse } from '../../shared/models/auth-response.model';
+import { ILoginResponse } from '../../../shared/models/auth-response.model';
 import { HttpClientModule } from '@angular/common/http';
 
 @Component({

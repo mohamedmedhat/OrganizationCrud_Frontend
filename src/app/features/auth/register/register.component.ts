@@ -1,6 +1,6 @@
 import { Component, signal } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from '../../api/auth.service';
+import { AuthService } from '../../../api/auth.service';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,

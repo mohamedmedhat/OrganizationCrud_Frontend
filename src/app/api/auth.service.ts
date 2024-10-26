@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { usersEnv } from '../../environments/env';
 import { FormGroup } from '@angular/forms';
+import { usersProductionEnv } from '../../environments/env-prod';
 
 @Injectable({
   providedIn: 'root',
@@ -12,24 +12,24 @@ export class AuthService {
 
   login(formGroup: FormGroup): Observable<any> {
     const formData = formGroup.value;
-    const url = usersEnv.loginUrl;
+    const url = usersProductionEnv.loginUrl;
     return this.http.post(url, formData);
   }
 
   register(formGroup: FormGroup): Observable<any> {
     const formData = formGroup.value;
-    const url = usersEnv.regsiterUrl;
+    const url = usersProductionEnv.regsiterUrl;
     return this.http.post(url, formData);
   }
 
   refreshToken(body: { token: string }): Observable<any> {
     const { token } = body;
-    const url = usersEnv.refreshTokenUrl;
+    const url = usersProductionEnv.refreshTokenUrl;
     return this.http.post(url, token);
   }
 
   revokeToken(body: { refresh_token: string }): Observable<any> {
-    const url = usersEnv.revokeTokenUrl;
+    const url = usersProductionEnv.revokeTokenUrl;
     return this.http.post(url, body.refresh_token);
   }
 

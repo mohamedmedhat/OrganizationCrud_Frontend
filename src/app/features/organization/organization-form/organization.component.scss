@@ -1,0 +1,95 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+  
+    @media (max-width: 768px) {
+      padding: 20px;
+    }
+  }
+  
+  form {
+    font-family: sans-serif;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px; /* Restricting the max width for better layout */
+    background-color: #f9f9f9; /* Adding a light background color */
+  
+    .login-form-title {
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+  
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 5px 0;
+      width: 100%; /* Make inputs take full width */
+      transition: border-color 0.3s; /* Smooth transition */
+  
+      &:focus {
+        border-color: green; /* Highlight border on focus */
+        outline: none; /* Remove default outline */
+      }
+    }
+  
+    .have-account {
+      text-align: center;
+      display: flex;
+      gap: 5px;
+  
+      small {
+        color: red;
+        font-size: 12px;
+      }
+  
+      p {
+        margin: 0;
+        font-size: 14px;
+      }
+  
+      a {
+        color: green;
+        text-decoration: underline;
+        font-weight: bold;
+  
+        &:hover {
+          color: darkgreen; /* Darker green on hover */
+        }
+      }
+    }
+  
+    button {
+      cursor: pointer;
+      background-color: green;
+      color: white;
+      font-size: medium;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      width: 100%; /* Make button take full width */
+      box-shadow: 0 2px 5px rgba(0, 128, 0, 0.3);
+      transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+  
+      &:hover {
+        background-color: darkgreen; /* Darker green on hover */
+        transform: translateY(-2px); /* Lift effect on hover */
+      }
+    }
+  }
+  

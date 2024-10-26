@@ -1,0 +1,17 @@
+<section class="hero">
+    <form [formGroup]="createOrganizationForm" (submit)="onSubmit()">
+        <h3 class="login-form-title">{{ title }}</h3>
+        <input formControlName="name" type="text" placeholder="name" />
+        <div *ngIf="createOrganizationForm.get('name')?.invalid && (createOrganizationForm.get('name')?.touched || createOrganizationForm.get('name')?.dirty)">
+          <small *ngIf="createOrganizationForm.get('name')?.errors?.['required']">name is required.</small>
+          <small *ngIf="createOrganizationForm.get('name')?.errors?.['name']">Invalid name format.</small>
+        </div>
+        
+        <input formControlName="description" type="text" placeholder="description" />
+        <div *ngIf="createOrganizationForm.get('description')?.invalid && (createOrganizationForm.get('description')?.touched || createOrganizationForm.get('description')?.dirty)">
+          <small *ngIf="createOrganizationForm.get('description')?.errors?.['required']">description is required.</small>
+          <small *ngIf="createOrganizationForm.get('description')?.errors?.['minlength']">description must be at least 6 characters long.</small>
+        </div>
+        <button type="submit" [disabled]="createOrganizationForm.invalid">create</button>
+    </form>
+</section>

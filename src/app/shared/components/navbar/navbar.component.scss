@@ -1,0 +1,40 @@
+.navbar-container {
+    width: 100%; /* Full width for the container */
+    display: flex; /* Use flexbox for alignment */
+    justify-content: center; /* Center content horizontally */
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+    font-family: sans-serif;
+    background-color: pink;
+    padding: 10px; /* Padding inside the ul */
+    margin: 0; /* No margin */
+    width: 100%; /* Full width for the ul */
+
+    li {
+        padding: 10px 20px; 
+        background-color: white; 
+        border-radius: 5px; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+        transition: transform 0.2s; 
+
+        a {
+            text-decoration: none; /* Remove underline */
+            color: black; /* Link color */
+            
+            &:hover {
+                color: green; /* Change color on hover */
+            }
+        }
+
+        &:hover {
+            transform: scale(1.05); 
+            cursor: pointer; 
+        }
+    }
+}

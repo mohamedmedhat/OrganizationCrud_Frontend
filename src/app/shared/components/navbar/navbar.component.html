@@ -1,0 +1,7 @@
+<div class="navbar-container">
+    <ul *ngFor="let item of itemsList">
+        <li [attr.key]="item.id" (click)="onItemClick(item)">
+            <a [routerLink]="item.link">{{ item.name }}</a>
+        </li>
+    </ul>
+</div>
