@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { NotFoundComponent } from './shared/component/not-found/not-found.component';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './core/guards/auth.guard';
 
@@ -10,9 +10,9 @@ export const routes: Routes = [
     children: [
       {
         path: 'register',
-        title: 'regisetr',
+        title: 'register',
         loadComponent: () =>
-          import('./features/register/register.component').then(
+          import('./features/auth/register/register.component').then(
             (r) => r.RegisterComponent
           ),
       },
@@ -20,7 +20,32 @@ export const routes: Routes = [
         path: 'login',
         title: 'login',
         loadComponent: () =>
-          import('./features/login/login.component').then((l) => l.LoginComponent),
+          import('./features/auth/login/login.component').then(
+            (l) => l.LoginComponent
+          ),
+      },
+    ],
+  },
+  {
+    path: 'organization',
+    title: 'organization',
+    children: [
+      {
+        path: 'list',
+        title: 'list',
+        canActivate: [AuthGuard],
+        loadComponent: () =>
+          import(
+            './features/organization/organization-items/organization-items.component'
+          ).then((i) => i.OrganizationItemsComponent),
+      },
+      {
+        path: 'members',
+        title: 'members',
+        loadComponent: () =>
+          import(
+            './features/organization/organization-members/organization-members.component'
+          ).then((m) => m.OrganizationMembersComponent),
       },
     ],
   },

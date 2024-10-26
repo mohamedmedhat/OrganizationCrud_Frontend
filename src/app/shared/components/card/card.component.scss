@@ -1,0 +1,45 @@
+.card {
+    background-color: #fff; /* White background for the card */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+    overflow: hidden; /* Prevent overflow from rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+    margin: 20px; /* Space around the card */
+    
+    &:hover {
+        transform: translateY(-5px); /* Lift effect on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+    }
+}
+
+.card-content {
+    padding: 20px; /* Padding inside the card */
+    text-align: center; /* Center text */
+}
+
+.card-title {
+    font-size: 24px; /* Font size for the title */
+    color: #333; /* Dark grey color for the title */
+    margin: 0 0 10px; /* Margin below the title */
+}
+
+.card-description {
+    font-size: 16px; /* Font size for the description */
+    color: #666; /* Lighter grey color for the description */
+}
+
+.card-button {
+    background-color: #28a745; /* Bootstrap success green */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor */
+    margin: 20px 0; /* Space above and below the button */
+    transition: background-color 0.3s; /* Smooth transition */
+
+    &:hover {
+        background-color: #218838; /* Darker green on hover */
+    }
+}
