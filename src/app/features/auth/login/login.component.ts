@@ -46,7 +46,7 @@ export class LoginComponent {
       next: (data: ILoginResponse) => {
         console.log('login successfully');
         localStorage.setItem('token', data.access_token || data.refresh_token);
-        this.router.navigate(['']);
+        this.router.navigate(['/organization/list']);
       },
       error: () => {
         this.loading.set(false);

@@ -6,7 +6,7 @@
   <ng-container *ngIf="members().length > 0; else noMembers">
     <div *ngFor="let member of members()">
       <app-card
-        [attr.key]="member.user._id"
+        [attr.key]="member._id"
         [name]="member.user.name"
         [description]="member.user.email + ' ' + member.access_level"
       >
